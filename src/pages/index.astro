@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card, { Props as CardData } from '../components/Card.astro';
+import Job, { Props as JobData } from '../components/Job.astro';
+
+const jobs: Array<JobData> = [
+  {
+    name: "Administrate",
+    title: "Engineering Manager(Staff Engineer)",
+    start: "November 2022",
+    description: `
+      Initially hired as a Full Stack Staff Engineer, but soon served as a team/clan lead,
+      and then an engineering manager (tribe lead). Worked in Python/Typescript/React/PHP 
+      Codebases to deliver value across the training and learning domains. 
+    `,
+    valueAdds: [
+			"Consolidated CI and CD into GH Actions from disparate and in house built tooling, reducing time to deploy (ongoing).",
+			"Delivered a usable subscription based learning experience for students.",
+			"Aligned engineering teams to company OKRs, converting a detractor to a champion.",
+			"Migrated all customers off a legacy LMS system to the most recent one, reducing waste and on going maintenace costs.",
+			"Participated in a Front End Guild, leading the adoption of key practices and proposing technologies and patterns like Micro Front Ends",
+			"Delivered an Embedded React Component utility to hasten the transition off legacy UIs.",
+			"Introduced, evangelized, and used Structured Logs for better dashboards, and success metrics from AWS to Grafana."
+    ]
+  }
+];
+
+const links: Array<CardData> = [
+  {
+		title: "Blog ✍️",
+		tipPrefix: "blog",
+		href: "https://sean.thenewells.us",
+		body: "My personal blog, randomly updated with whatever I'm hacking away at."
+	},
+	{
+		title: "Twitter 🐦",
+		tipPrefix: "Twitter profile",
+		href: "https://twitter.com/SirSeanOfLoxley",
+		body: "My twitter profile where I tweet about tech and some other stuff."
+	},
+	{
+		title: "DEV 💻",
+		tipPrefix: "Dev profile",
+		href: "https://dev.to/sirseanofloxley",
+		body: "I cross post from my blog to DEV which is a community of software developers built on Forem."
+	},
+	{
+		title: "Linked In",
+		tipPrefix: "LinkedIn profile",
+		href: "https://www.linkedin.com/in/sean-newell-7856a948/"
+	},
+	{
+		title: "Stack Overflow",
+		tipPrefix: "SO profile",
+		href: "https://stackoverflow.com/users/2378943/sean-newell"
+	},
+	{
+		title: "Github Repos",
+		tipPrefix: "Github profile",
+		href: "https://github.com/snewell92/"
+	},
+	{
+		title: "Gitlab Repos",
+		tipPrefix: "Gitlab profile",
+		href: "https://gitlab.com/sNewell"
+	}
+];
+
+---
+
+<Layout title="👋 Sean Newell | Resume 📜">
+  <div class="grid lg:grid-cols-[3fr,2fr,1fr] md:grid-cols-1">
+		<main class="grid m-auto p-6 max-w-3xl items-start justify-start">
+			<h1 class="text-7xl w-fit font-semibold bg-clip-text text-transparent bg-gradient-to-r from-lime-700 to-teal-500">Sean Newell</h1>
+
+    	<section>
+				<h2 class="text-4xl w-fit font">Employement History</h2>
+				<ol>
+			  	{jobs.map(jobData => <Job {...jobData} />)}
+				</ol>
+			</section>
+
+			<section>
+				<details>
+				  <summary class="text-md cursor-pointer">Show External Links</summary>
+					<h2 class="text-black text-lg">Links & Online Presence</h2>
+					<ul role="list" class="grid gap-2 grid-cols-[repeat(auto-fit,minmax(24ch,1fr))]">
+					  {links.map(link => <Card {...link} />)}
+					</ul>
+				</details>
+			</section>
+		</main>
+		<div class="grid justify-self-start content-baseline w-full">
+			<img alt="Photo Sean Newell smiling" class="m-auto w-5/6 max-w-xl" src="sean.png" />
+		</div>
+	</div>
+</Layout>
+

@@ -1,0 +1,26 @@
+---
+export interface Props {
+	name: string;
+	start: string;
+	end?: string;
+	title: string;
+	description: string;
+	valueAdds: string[];
+}
+
+const { name, start, end, title, description, valueAdds } = Astro.props;
+---
+
+
+<li>
+	<h3 class="pl-2 text-2xl border-teal-500 border-l-2">{name} <span class="text-sm italic">{start} - {end || "Today"}</span></h3>
+	<p class="text-lg underline underline-offset-2"><em>{title}</em></p>
+	<p class="text-md ml-4">{description}</p>
+
+	<details>
+		<summary class="ml-6 cursor-pointer text-teal-500">Value Adds</summary>
+		<ul class="text-sm ml-10 list-disc">
+	  	{valueAdds.map(valueAddDesc => <li>{valueAddDesc}</li>)}
+		</ul>
+	</details>
+</li>
