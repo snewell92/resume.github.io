@@ -42,6 +42,26 @@ const jobs: Array<JobData> = [
       "Added notification aggregation in a RMQ C# microservice, scaling to handle burst traffic (>30K msgs <1min) while adding aggregation feature.",
       "Showed value and deliver of each project through Splunk Dashboards."
     ]
+  },
+  {
+    name: "Dorian Business Systems (-> Connexeo -> Vanco)",
+    title: "Softwar Engineer",
+    start: "January 2017",
+    end: "May 2018",
+    description: `
+      Full Stack (JSCript / VBScript / NodeJS / Typescript / Javascript / PHP) Engineer.
+      Worked on features of the main music organization software, CHARMS, used nationally
+      across nearly all academic music programs. (Fun fact, I was in their databse from
+      ensembles I performed during my school years as a Trumpet Player)
+    `,
+    valueAdds: [
+      "Introduced a new full stack during an acquisition, consolidating all bespoke solo and ensemble projects, into a Typescript project.",
+      "Delivered a full typescript+react - C# backend within a PHP monolith delivering orders of magnitude performance (sub 50ms 99th response times).",
+      "Delivered a bitbucket bot to automate shift left testing methodologies and processes leveraging k8s and ephemeral test environments.",
+      "Piloted first containerization project with our C# Notifications API",
+      "Added notification aggregation in a RMQ C# microservice, scaling to handle burst traffic (>30K msgs <1min) while adding aggregation feature.",
+      "Showed value and deliver of each project through Splunk Dashboards."
+    ]
   }
 ];
 
@@ -94,9 +114,67 @@ const links: Array<CardData> = [
 			<h1 class="text-7xl w-fit font-semibold bg-clip-text text-transparent bg-gradient-to-r from-lime-700 to-teal-500">Sean Newell</h1>
 
     	<section>
-				<h2 class="text-4xl w-fit font">Employement History</h2>
+				<h2 class="text-4xl w-fit">Employement History</h2>
 				<ol>
 			  	{jobs.map(jobData => <Job {...jobData} />)}
+				</ol>
+			</section>
+
+			<section class="mt-6">
+				<h2 class="text-3xl w-fit mb-2">Skills & Proficiencies</h2>
+				<h3 title="Underlined = Used at Work; Bolded = Shipped" class="cursor-help relative text-xl">Languages <span class="absolute inline-block text-center rounded-xl w-6 h-6 bg-stone-300 text-sm bottom-2">ℹ</span></h3>
+				<ol title="Underlined = Used at Work; Bolded = shipped" class="cursor-help list-none [&>li]:inline pl-2">
+				  <li class="underline font-bold">Typescript</li>,
+				  <li class="underline font-bold">Javascript</li>,
+				  <li class="underline font-bold">NodeJS</li>,
+				  <li class="underline font-bold">C#</li>,
+				  <li class="underline font-bold">Python</li>,
+				  <li class="underline font-bold">SQL</li>,
+				  <li class="underline font-bold">GQL</li>
+				  <li class="underline font-bold">CSS</li>
+				  <li class="underline font-bold">LESS</li>
+				  <li class="underline font-bold">SASS</li>
+				  <li class="underline font-bold">PHP</li>
+				  <li class="underline font-bold">Java</li>,
+				  <li class="underline font-bold">JScript</li>,
+				  <li class="underline font-bold">LabView</li>,
+				  <li class="font-bold">F#</li>,
+				  <li class="font-bold">Elm</li>,
+				  <li>Rust</li>,
+				  <li>Haskell</li>
+				</ol>
+				<h3>Other</h3>
+				<ol class="list-none [&>li]:inline [&>li]:text-sm pl-2">
+				  <li>LEAN</li>
+				  <li>Docker</li>
+				  <li>AWS</li>
+				  <li>Kubernetes (k8s)</li>
+				  <li>CI/CD</li>
+				  <li>Git</li>
+				  <li>Webpack</li>
+				  <li>Vite</li>
+				  <li>React</li>
+				  <li>Vue</li>
+				  <li>SolidJS</li>
+				  <li>Astro</li>
+				  <li>Angular</li>
+				  <li>AngularJS</li>
+				  <li>Knockout</li>
+				  <li>jQuery</li>
+				  <li>GitHub</li>
+				  <li>GH Actions</li>
+				  <li>GH Pages</li>
+				  <li>GitLab</li>
+				  <li>Agile</li>
+				  <li>Jira</li>
+				  <li>Youtrack</li>
+				  <li>TeamCity</li>
+				  <li>Visual Studio</li>
+				  <li>VSCode</li>
+				  <li>Neovim</li>
+				  <li>Vim</li>
+				  <li>PHPStorm</li>
+				  <li>IntelliJ</li>
 				</ol>
 			</section>
 
@@ -109,6 +187,7 @@ const links: Array<CardData> = [
 					</ul>
 				</details>
 			</section>
+
 		</main>
 		<div class="grid justify-self-start content-baseline w-full">
       <svg class="pic grid m-auto w-11/12 max-w-4xl" viewBox="0 0 480 480">
