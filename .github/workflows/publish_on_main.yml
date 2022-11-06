@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   deploy:
-    name: Build
+    name: Deploy
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -31,4 +31,6 @@ jobs:
       - uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist
+      - uses: actions/deploy-pages@v1
+        id: deployment
 
