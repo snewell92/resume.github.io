@@ -1,27 +1,37 @@
 ---
 export interface Props {
-	name: string;
-	start: string;
-	end?: string;
-	title: string;
-	description: string;
-	valueAdds: string[];
+	name: string
+	start: string
+	end?: string
+	title: string
+	peopleManager?: boolean
+	description: string
+	valueAdds: string[]
 }
 
-const { name, start, end, title, description, valueAdds } = Astro.props;
+const { name, start, end, title, peopleManager = false, description, valueAdds } = Astro.props;
 ---
 
 
 <li class="mt-4">
-	<div class="border-teal-500 border-l-2 pl-2">
+	<div class="border-emerald-300 border-l-4 pl-2">
 		<h3 class="text-2xl">{name}</h3>
 		<p class="text-sm italic">{start} - {end || "Today"}</p>
 	</div>
-	<p class="text-lg underline underline-offset-2"><em>{title}</em></p>
+
+	<p class="text-lg underline underline-offset-2 italic">{title}</p>
+	<span class="italic">{peopleManager && "👫 Included people managing"}</span>
+
 	<p class="text-md ml-4">{description}</p>
 
-	<details>
-		<summary class="ml-6 cursor-pointer text-teal-500">Value Adds</summary>
+  {/*
+	<div class="grid">
+	  {stats.map(stat => <Stat {...stat} />)}
+	</div>
+	*/}
+
+	<details class="group/deets">
+		<summary class="ml-6 text-teal-500 cursor-pointer"><span class="group-open/deets:hidden">Show</span><span class="hidden group-open/deets:inline">Hide</span> Value Adds</summary>
 		<ul class="text-sm ml-10 list-disc">
 	  	{valueAdds.map(valueAddDesc => <li>{valueAddDesc}</li>)}
 		</ul>

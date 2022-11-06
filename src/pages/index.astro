@@ -7,25 +7,28 @@ const jobs: Array<JobData> = [
   {
     name: "Administrate",
     title: "Engineering Manager(Staff Engineer)",
+    peopleManager: true,
     start: "November 2020",
     description: `
-      Initially hired as a Full Stack Staff Engineer, but soon served as a team/clan lead,
-      and then an engineering manager (tribe lead). Worked in Python/Typescript/React/PHP 
-      Codebases to deliver value across the training and learning domains. 
+      Full Stack Staff Engineer turned Engineering Manager. Worked in Python/Typescript/React/PHP 
+      cross functional teams delivering value across the training, learning, and core domains based on
+      the team's area of ownership (tribe & clan ownership model).
     `,
     valueAdds: [
-			"Consolidated CI and CD into GH Actions from disparate and in house built tooling, reducing time to deploy (ongoing).",
+			"Consolidated CI and CD into GH Actions from disparate and in house built tooling, reducing time to deploy by 50% (ongoing).",
 			"Delivered a usable subscription based learning experience for students.",
-			"Aligned engineering teams to company OKRs, converting a detractor to a champion.",
-			"Migrated all customers off a legacy LMS system to the most recent one, reducing waste and on going maintenace costs.",
+			"Helped drive cycle times down to <8 calendar days.",
+			"Migrated all customers off a legacy LMS system, reducing waste and on going maintenace costs.",
 			"Participated in the Front End Guild, leading the adoption of key practices and proposing technologies and patterns like Micro Front Ends",
 			"Delivered an Embedded React Component utility to hasten the transition off legacy UIs.",
+			"Extended the custom field system to support a single field definition across multiple entities.",
 			"Introduced, evangelized, and used Structured Logs for better dashboards, and success metrics from AWS to Grafana."
     ]
   },
   {
     name: "Paycom",
-    title: "Team Lead (Tools Team)",
+    title: "Team Lead",
+    peopleManager: true,
     start: "May 2018",
     end: "November 2020",
     description: `
@@ -45,18 +48,18 @@ const jobs: Array<JobData> = [
   },
   {
     name: "Dorian Business Systems (-> Connexeo -> Vanco)",
-    title: "Softwar Engineer",
+    title: "Software Engineer",
     start: "January 2017",
     end: "May 2018",
     description: `
       Full Stack (JSCript / VBScript / NodeJS / Typescript / Javascript / PHP) Engineer.
       Worked on features of the main music organization software, CHARMS, used nationally
       across nearly all academic music programs. (Fun fact, I was in their databse from
-      ensembles I performed during my school years as a Trumpet Player)
+      ensembles I performed during my school years as a Trumpet Player.)
     `,
     valueAdds: [
       "Introduced a new full stack during an acquisition, consolidating all bespoke solo and ensemble projects, into a Typescript project.",
-      "Swappec sms/mms/phone provider to cut related costs by 50%."
+      "Swapped sms/mms/phone provider to cut related costs by 50%."
     ]
   }
 ];
@@ -118,65 +121,143 @@ const links: Array<CardData> = [
 
 			<section class="mt-6">
 				<h2 class="text-3xl w-fit mb-2">Skills & Proficiencies</h2>
-				<h3 title="Underlined = Used at Work; Bolded = Shipped" class="cursor-help relative text-xl">Languages <span class="absolute inline-block text-center rounded-xl w-6 h-6 bg-stone-300 text-sm bottom-2">ℹ</span></h3>
-				<ol title="Underlined = Used at Work; Bolded = shipped" class="cursor-help list-none [&>li]:inline pl-2">
-				  <li class="underline font-bold">Typescript</li>,
-				  <li class="underline font-bold">Javascript</li>,
-				  <li class="underline font-bold">NodeJS</li>,
-				  <li class="underline font-bold">C#</li>,
-				  <li class="underline font-bold">Python</li>,
-				  <li class="underline font-bold">SQL</li>,
+				<h3 title="Underlined = Used at Work; Bolded = Shipped" class="cursor-help relative text-xl">Languages <span class="absolute text-center rounded-xl w-6 h-6 bg-stone-300 text-sm bottom-2 hidden md:inline-block">ℹ</span></h3>
+				<span class="block md:hidden text-xs italic pl-1">Underlined signifies that I've used the language at work, whereas bold means I've shipped something with that tech (at work or otherwise).</span>
+				<ol title="Underlined = Used at Work; Bolded = shipped" class="cursor-help list-none [&>li]:inline pl-2 mt-2">
+				  <li class="rounded-lg bg-emerald-200 py-1 px-3 underline font-bold">Typescript</li>
+				  <li class="rounded-lg bg-emerald-200 py-1 px-3 underline font-bold">Javascript</li>
+				  <li class="rounded-lg bg-emerald-200 py-1 px-3 underline font-bold">C#</li>
+				  <li class="underline font-bold">Python</li>
+				  <li class="underline font-bold">SQL</li>
 				  <li class="underline font-bold">GQL</li>
 				  <li class="underline font-bold">CSS</li>
 				  <li class="underline font-bold">LESS</li>
 				  <li class="underline font-bold">SASS</li>
 				  <li class="underline font-bold">PHP</li>
 				  <li class="underline font-bold">Java</li>,
-				  <li class="underline font-bold">JScript</li>,
-				  <li class="underline font-bold">LabView</li>,
-				  <li class="font-bold">F#</li>,
-				  <li class="font-bold">Elm</li>,
-				  <li>Rust</li>,
+				  <li class="underline font-bold">JScript</li>
+				  <li class="underline font-bold">LabView</li>
+				  <li class="font-bold">F#</li>
+				  <li class="font-bold">Elm</li>
+				  <li>Rust</li>
 				  <li>Haskell</li>
+				  <li>Ruby</li>
+				  <li>Markdown</li>
+				  <li>YAML</li>
 				</ol>
-				<h3>Other</h3>
-				<ol class="list-none [&>li]:inline [&>li]:text-sm pl-2">
-				  <li>LEAN</li>
-				  <li>Docker</li>
-				  <li>AWS</li>
-				  <li>Kubernetes (k8s)</li>
-				  <li>CI/CD</li>
-				  <li>Git</li>
-				  <li>Webpack</li>
-				  <li>Vite</li>
-				  <li>React</li>
-				  <li>Vue</li>
-				  <li>SolidJS</li>
-				  <li>Astro</li>
-				  <li>Angular</li>
-				  <li>AngularJS</li>
-				  <li>Knockout</li>
-				  <li>jQuery</li>
-				  <li>GitHub</li>
-				  <li>GH Actions</li>
-				  <li>GH Pages</li>
-				  <li>GitLab</li>
-				  <li>Agile</li>
-				  <li>Jira</li>
-				  <li>Youtrack</li>
-				  <li>TeamCity</li>
-				  <li>Visual Studio</li>
-				  <li>VSCode</li>
-				  <li>Neovim</li>
-				  <li>Vim</li>
-				  <li>PHPStorm</li>
-				  <li>IntelliJ</li>
-				</ol>
+
+        <details open class="mt-1 group/deets">
+				  <summary class="text-md cursor-pointer"><span class="group-open/deets:hidden">Show</span><span class="hidden group-open/deets:inline-block">Hide</span> Other Technologies</summary>
+          <p class="text-sm pl-2">A list of frameworks, tools, methodologies - all the anciliiary 'things' one gets exposed to over the years as a software engineer.</p>
+
+				  <ol class="list-none [&>li]:inline [&>li]:text-sm pl-2 mt-1">
+
+				    <li>Docker</li>
+				    <li>docker-compose</li>
+				    <li>Podman</li>
+				    <li>Kubernetes (k8s)</li>
+
+				    <li>AWS</li>
+				    <li>Digital Ocean</li>
+				    <li>GCP</li>
+
+				    <li>NodeJS</li>
+				    <li>.NET</li>
+				    <li>dotnet core</li>
+				    <li>.NET Framework</li>
+
+				    <li>NPM</li>
+				    <li>Yarn</li>
+				    <li>pnpm</li>
+				    <li>NuGet</li>
+				    <li>Cargo</li>
+				    <li>bundle</li>
+				    <li>composer</li>
+
+				    <li>CI/CD</li>
+				    <li>GH Actions</li>
+				    <li>CircleCI</li>
+				    <li>Gitlab CI</li>
+				    <li>TeamCity</li>
+
+				    <li>Git</li>
+				    <li>SVN 💀</li>
+
+				    <li>Vite</li>
+				    <li>Webpack</li>
+				    <li>Parcel</li>
+				    <li>Snowpack</li>
+
+				    <li>React</li>
+				    <li>Vue</li>
+				    <li>SolidJS</li>
+				    <li>Astro</li>
+				    <li>Angular</li>
+				    <li>AngularJS</li>
+				    <li>Knockout</li>
+				    <li>Lit</li>
+				    <li>jQuery</li>
+
+				    <li>Bootstrap</li>
+				    <li>Material UI (MUI)</li>
+				    <li>Tailwind</li>
+
+				    <li>Express</li>
+				    <li>FeathersJS</li>
+				    <li>Flask</li>
+				    <li>MVC</li>
+				    <li>Web API</li>
+
+				    <li>Entity Framework</li>
+				    <li>Dapper</li>
+				    <li>Sequelizer</li>
+				    <li>Prisma</li>
+				    <li>SQLAlchemy</li>
+
+				    <li>DI (Dependency Injection)</li>
+				    <li>AutoMapper</li>
+
+				    <li>Razor</li>
+				    <li>Jinja</li>
+
+				    <li>TDD</li>
+				    <li>Jest</li>
+				    <li>NUnit</li>
+				    <li>Cypress</li>
+				    <li>Selenium</li>
+
+				    <li>GitHub</li>
+				    <li>GH Pages</li>
+				    <li>GitLab</li>
+				    <li>Bitbucket</li>
+
+				    <li>LEAN</li>
+				    <li>Agile</li>
+				    <li>Scrum</li>
+
+				    <li>Jira</li>
+				    <li>Youtrack</li>
+
+				    <li>Visual Studio</li>
+				    <li>VSCode</li>
+				    <li>Neovim</li>
+				    <li>Vim</li>
+				    <li>PHPStorm</li>
+				    <li>IntelliJ</li>
+
+				    <li>Windows</li>
+				    <li>MacOS</li>
+				    <li>Linux</li>
+				    <li>Ubuntu</li>
+				    <li>Debian</li>
+				    <li>NixOS</li>
+				  </ol>
+				</details>
 			</section>
 
 			<section class="mt-6">
-				<details>
-				  <summary class="text-md cursor-pointer">Show External Links</summary>
+				<details class="group/deets">
+				  <summary class="text-md cursor-pointer"><span class="group-open/deets:hidden">Show</span><span class="hidden group-open/deets:inline">Hide</span> External Links</summary>
 					<h2 class="text-black text-lg">Links & Online Presence</h2>
 					<ul role="list" class="grid gap-2 grid-cols-[repeat(auto-fit,minmax(24ch,1fr))]">
 					  {links.map(link => <Card {...link} />)}
@@ -184,9 +265,20 @@ const links: Array<CardData> = [
 				</details>
 			</section>
 
+			<section class="mt-5">
+			  <details class="group/deets">
+			    <summary class="text-md cursor-pointer"><span class="group-open/deets:hidden">Show</span><span class="hidden group-open/deets:inline">Hide</span> Credits & Attributions</summary>
+			    <p>This resume/cv's code is availabe on Github @ <a class="text-blue-500 hover:text-blue-300" target="_blank" href="https://github.com/snewell92/resume.github.io">snewell92/resume.github.io</a></p>
+			    <p>This code uses the awesome meta framework <a class="text-blue-500 hover:text-blue-300" target="_blank" href="https://astro.build/">Astro</a> as an SSG.</p>
+			    <p>The background svg pattern was generated by <a class="text-blue-500 hover:text-blue-300" target="_blank" href="https://www.svgbackgrounds.com/">SVGBackgrounds.com</a></p>
+			    <p>The blog clip path for the image of my face was generated by <a class="text-blue-500 hover:text-blue-300" target="_blank" href="https://10015.io/tools/svg-blob-generator">SVG Blob Generator</a></p>
+			  </details>
+			</section>
+
 		</main>
+
 		<div class="grid justify-self-start content-baseline w-full">
-      <svg class="pic grid m-auto w-11/12 max-w-4xl" viewBox="0 0 480 480">
+      <svg class="pic-bg m-auto w-11/12 max-w-4xl" viewBox="0 0 480 480">
         <clipPath id="blob-clip-1">
           <!-- SVG Path generated by https://10015.io/tools/svg-blob-generator -->
 	        <path fill="rgba(0, 0, 0, 1)" d="M410.5,265.5Q354,291,363.5,339Q373,387,331.5,390Q290,393,258,385.5Q226,378,182,397.5Q138,417,138.5,365.5Q139,314,124,291Q109,268,80,234Q51,200,89.5,179.5Q128,159,137.5,119Q147,79,185,77Q223,75,256.5,80.5Q290,86,340,79.5Q390,73,389,123.5Q388,174,427.5,207Q467,240,410.5,265.5Z" />
@@ -198,7 +290,7 @@ const links: Array<CardData> = [
 </Layout>
 
 <style>
-.pic {
+.pic-bg {
   background-image: radial-gradient(circle, #0891b2, #a5f3fc, #a5f3fc61 55%, #00808000 70%);
   background-position-x: left 12px;
 }
