@@ -20,7 +20,7 @@ const { name, start, end, title, peopleManager = false, description, valueAdds }
 	</div>
 
 	<p class="text-lg underline underline-offset-2 italic">{title}</p>
-	<span class="italic">{peopleManager && "👫 Included people managing"}</span>
+	{peopleManager && <span>👫 <span class="italic">Included People Managing</span></span>}
 
 	<p class="text-md ml-4">{description}</p>
 
