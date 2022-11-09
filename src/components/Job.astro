@@ -1,4 +1,6 @@
 ---
+import CollapsibleSection from "./CollapsibleSection.astro";
+
 export interface Props {
 	name: string
 	start: string
@@ -30,10 +32,9 @@ const { name, start, end, title, peopleManager = false, description, valueAdds }
 	</div>
 	*/}
 
-	<details class="group/deets">
-		<summary class="ml-6 text-teal-500 cursor-pointer"><span class="group-open/deets:hidden">Show</span><span class="hidden group-open/deets:inline">Hide</span> Value Adds</summary>
+	<CollapsibleSection summaryClass="text-teal-500 ml-6" summary="Value Adds">
 		<ul class="text-sm ml-10 list-disc">
 	  	{valueAdds.map(valueAddDesc => <li>{valueAddDesc}</li>)}
 		</ul>
-	</details>
+	</CollapsibleSection>
 </li>

@@ -1,0 +1,19 @@
+---
+export interface Props {
+  sectionClass?: string
+  summaryClass?: string
+  summary: string
+  initiallyOpen?: boolean
+}
+
+const { summary, sectionClass, summaryClass, initiallyOpen = false } = Astro.props;
+---
+
+<section class={sectionClass}>
+	<details class="group/deets" open={initiallyOpen}>
+		<summary class={`text-md cursor-pointer ${summaryClass}`}><span class="group-open/deets:hidden">Show</span><span class="hidden group-open/deets:inline">Hide</span> {summary}</summary>
+
+    <slot />
+
+	</details>
+</section>
