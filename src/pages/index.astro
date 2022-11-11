@@ -119,7 +119,8 @@ const links: Array<CardData> = [
 section#objectiveCard:hover {
   transform:
     rotateX(calc((var(--ratio-y) - 0.5) * 30deg))
-    rotateY(calc((var(--ratio-x) - 0.5) * -15deg));
+    rotateY(calc((var(--ratio-x) - 0.5) * -15deg))
+    scale(1.05);
 }
 </style>
 
@@ -128,7 +129,7 @@ section#objectiveCard:hover {
 		<main class="grid m-auto p-6 max-w-3xl items-start justify-start">
 			<h1 class="text-7xl w-fit font-semibold bg-clip-text text-transparent bg-gradient-to-r from-lime-700 to-teal-500">Sean Newell</h1>
 
-			<section id="objectiveCard" class="group mt-6 mb-8 rounded-sm hover:rounded-2xl bg-stone-600 drop-shadow-lg shadow-md text-neutral-300 transform-gpu transition-all ease-linear duration-100">
+			<section id="objectiveCard" class="group mt-6 mb-8 rounded-md hover:rounded-2xl bg-stone-600 drop-shadow-lg shadow-md text-neutral-300 transform-gpu transition-all ease-linear duration-100 hover:drop-shadow-2xl hover:shadow-gray-600">
 			  <a target="_blank" title="Mail To sean@thenewells.us" class="block w-full h-full p-4" href="mailto:sean@thenewells.us">
 			    <div class="overlay"></div>
 			    <p class="[&>b]:text-teal-400">
