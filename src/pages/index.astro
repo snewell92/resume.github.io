@@ -110,12 +110,25 @@ const links: Array<CardData> = [
 
 ---
 
+<style>
+:root {
+  --ratio-x: 0;
+  --ratio-y: 0;
+}
+
+section#objectiveCard:hover {
+  transform:
+    rotateX(calc((var(--ratio-y) - 0.5) * 30deg))
+    rotateY(calc((var(--ratio-x) - 0.5) * -15deg));
+}
+</style>
+
 <Layout title="👋 Sean Newell | Resume 📜">
   <div class="grid lg:grid-cols-[3fr,2fr] md:grid-cols-1">
 		<main class="grid m-auto p-6 max-w-3xl items-start justify-start">
 			<h1 class="text-7xl w-fit font-semibold bg-clip-text text-transparent bg-gradient-to-r from-lime-700 to-teal-500">Sean Newell</h1>
 
-			<section class="group mt-6 mb-8 rounded-md hover:rounded-lg bg-stone-600 drop-shadow-lg shadow-md text-neutral-300 transition-all ease-in-out">
+			<section id="objectiveCard" class="group mt-6 mb-8 rounded-sm hover:rounded-2xl bg-stone-600 drop-shadow-lg shadow-md text-neutral-300 transform-gpu transition-all ease-linear duration-100">
 			  <a target="_blank" title="Mail To sean@thenewells.us" class="block w-full h-full p-4" href="mailto:sean@thenewells.us">
 			    <div class="overlay"></div>
 			    <p class="[&>b]:text-teal-400">
@@ -124,6 +137,26 @@ const links: Array<CardData> = [
 			    <p class="mt-4 italic group-hover:underline">Email me @ <span class="group-hover:text-teal-400 group-hover:[text-shadow:_0_0_15px_theme(colors.teal.300)]">sean@thenewells.us</span></p>
 			  </a>
 			</section>
+
+			<script type="module">
+			  const objectiveEl = document.getElementById("objectiveCard");
+
+        const updateCssVar = ({ x, y }) => {
+          const cardBoundingRect = objectiveEl.getBoundingClientRect();
+
+          const horizontalPosition = x - cardBoundingRect.x;
+          const verticalPosition = y - cardBoundingRect.y;
+
+          const horizontalRatio = horizontalPosition / cardBoundingRect.width;
+          const verticalRatio = verticalPosition / cardBoundingRect.height;
+
+          objectiveEl.style.setProperty('--ratio-x', horizontalRatio);
+          objectiveEl.style.setProperty('--ratio-y', verticalRatio);
+        };
+
+        objectiveEl.addEventListener('pointermove', updateCssVar);
+        objectiveEl.addEventListener('pointerout', () => updateCssVar({x:0,y:0}));
+			</script>
 
     	<section>
 				<h2 class="text-4xl w-fit">Employement History</h2>
