@@ -111,10 +111,6 @@ const links: Array<CardData> = [
 ---
 
 <style>
-:root {
-  --ratio-x: 0;
-  --ratio-y: 0;
-}
 
 section#objectiveCard:hover {
   transform:
@@ -339,8 +335,9 @@ section#objectiveCard:hover {
 		</main>
 
 		<div class="grid justify-self-start content-baseline w-full">
-		  <div class="m-auto w-11/12 max-w-4xl">
-        <Image class="relative m-auto right-14 [clip-path:ellipse(40%_50%_at_60%_50%)]" src={seanImg} alt="Photo of Sean Newell smiling" format="webp" />
+		  <div class="relative m-auto w-11/12 max-w-4xl">
+		    <div class="absolute w-full h-full bg-teal-400 rounded-[35%_65%_35%_65%_/_65%_33%_67%_35%]"></div>
+        <Image class="relative m-auto rounded-[36%_64%_23%_77%_/_15%_37%_63%_85%]" src={seanImg} alt="Photo of Sean Newell smiling" format="webp" />
       </div>
 		</div>
 	</div>
