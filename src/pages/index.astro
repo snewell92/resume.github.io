@@ -160,15 +160,19 @@ section#objectiveCard:hover {
         objectiveEl.addEventListener('pointerout', () => updateCssVar({x:0,y:0}));
 			</script>
 
+			<section>
+			  <p class="italic text-lg mb-4">A print version of this resume as a file (pdf/docx) available upon request.</p>
+			</section>
+
     	<section>
-				<h2 class="text-4xl w-fit">Employement History</h2>
+				<h2 class="text-4xl">Employement History</h2>
 				<ol>
 			  	{jobs.map(jobData => <Job {...jobData} />)}
 				</ol>
 			</section>
 
 			<section class="mt-6">
-				<h2 class="text-3xl w-fit mb-2">Skills & Proficiencies</h2>
+				<h2 class="text-3xl mb-2">Skills & Proficiencies</h2>
 				<h3 title="Underlined = Used at Work; Bolded = Shipped" class="cursor-help relative text-xl">Languages <span class="absolute text-center rounded-xl w-6 h-6 bg-stone-300 text-sm bottom-2 hidden md:inline-block">ℹ</span></h3>
 				<span class="block md:hidden text-xs italic pl-1">Underlined signifies that I've used the language at work, whereas bold means I've shipped something with that tech (at work or otherwise).</span>
 				<ol title="Underlined = Used at Work; Bolded = shipped" class="cursor-help list-none [&>li]:inline pl-2 mt-2">
