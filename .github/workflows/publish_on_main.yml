@@ -26,16 +26,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Bun
-        uses: antongolub/action-setup-bun@v1
-        with:
-          cache: true
-
       - name: Install deps
         run: npm ci
 
       - name: build
-        run: bun run build
+        run: npm run build
 
       - uses: actions/upload-pages-artifact@v1
         with:
