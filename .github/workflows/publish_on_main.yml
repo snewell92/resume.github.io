@@ -33,7 +33,7 @@ jobs:
           platform: 'linux'
 
       - name: Install deps
-        run: bun install
+        run: npm ci
 
       - name: build
         run: bun run build
