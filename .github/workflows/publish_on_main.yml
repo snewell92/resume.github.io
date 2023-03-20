@@ -30,7 +30,6 @@ jobs:
         uses: antongolub/action-setup-bun@v1
         with:
           cache: true
-          platform: 'linux'
 
       - name: Install deps
         run: npm ci
