@@ -8,11 +8,12 @@ export interface Props {
 	title: string
 	location: string
 	peopleManager?: boolean
-	description: string
+	shortDescription: string
+	fullDescription: string
 	valueAdds: string[]
 }
 
-const { name, start, end, title, location, peopleManager = false, description, valueAdds } = Astro.props;
+const { name, start, end, title, location, peopleManager = false, shortDescription, fullDescription, valueAdds } = Astro.props;
 ---
 
 
@@ -35,7 +36,15 @@ const { name, start, end, title, location, peopleManager = false, description, v
 	<p class="text-lg underline underline-offset-2 italic">{title}</p>
 	{peopleManager && <span>👫 <span class="italic">Included People Managing</span></span>}
 
-	<p class="text-md ml-4">{description}</p>
+	<p class="text-md ml-4 mt-2">{shortDescription}</p>
+
+	<CollapsibleSection summaryClass="text-teal-500 ml-2 mt-2" summary="Top Three Value Adds" initiallyOpen={true}>
+		<ul class="text-sm ml-5 list-disc">
+      {valueAdds.slice(0, 3).map(valueAddDesc => <li>{valueAddDesc}</li>)}
+		</ul>
+	</CollapsibleSection>
+
+	<p class="text-md ml-4 my-3">{fullDescription}</p>
 
   {/*
 	<div class="grid">
@@ -43,9 +52,11 @@ const { name, start, end, title, location, peopleManager = false, description, v
 	</div>
 	*/}
 
-	<CollapsibleSection summaryClass="text-teal-500 ml-6" summary="Value Adds">
-		<ul class="text-sm ml-10 list-disc">
-	  	{valueAdds.map(valueAddDesc => <li>{valueAddDesc}</li>)}
-		</ul>
-	</CollapsibleSection>
+  {valueAdds.length > 3
+    && <CollapsibleSection summaryClass="text-teal-500 ml-6" summary="Value Adds">
+			<ul class="text-sm ml-10 list-disc">
+	      {valueAdds.slice(3).map(valueAddDesc => <li>{valueAddDesc}</li>)}
+			</ul>
+		</CollapsibleSection>
+	}
 </li>

@@ -9,20 +9,23 @@ import seanImg from "../assets/sean.png";
 const jobs: Array<JobData> = [
   {
     name: "Administrate",
-    title: "Engineering Manager(Staff Engineer)",
+    title: "Staff Engineer (Engineering Manager)",
     location: "🏴󠁧󠁢󠁳󠁣󠁴󠁿Edinburgh, Scotland UK",
     peopleManager: true,
     start: "November 2020",
-    description: `
-      Full Stack Staff Engineer turned Engineering Manager. Worked in Python/Typescript/React/PHP 
+    shortDescription: `
+      Training Infrastructure for multinational companies ranging from manufacturing, shipping, to software.
+    `,
+    fullDescription: `
+      Full Stack Staff Engineer, some months as an Engineering Manager, then back as an IC. Worked in Python/Typescript/React/PHP 
       cross functional teams delivering value across the training, learning, and core domains based on
       the team's area of ownership (tribe & clan ownership model). Primary API is a python GQL Api that
       coforms to the Relay Specification consumed by various clients, a combination of TS React Apps
       and node apis.
     `,
     valueAdds: [
-			"Consolidated CI and CD into GH Actions from disparate and in house built tooling, reducing time to deploy by 50% (ongoing).",
-			"Delivered a usable subscription based learning experience for students.",
+			"Consolidated CI and CD into GH Actions from disparate and in house built tooling, reducing time to deploy by 50%.",
+			"Delivered subscription based learning experience for students.",
 			"Helped drive cycle times down to <5 calendar days.",
 			"Migrated all customers off a legacy LMS system, reducing waste and on going maintenace costs.",
 			"Participated in the Front End Guild, leading the adoption of key practices and proposing technologies and patterns like Micro Front Ends",
@@ -38,19 +41,20 @@ const jobs: Array<JobData> = [
     peopleManager: true,
     start: "May 2018",
     end: "November 2020",
-    description: `
+    shortDescription: "Full HCM suite managing everything from hire to retire.",
+    fullDescription: `
       Full Stack (PHP / C# / Typescript / React) Engineer and Team Lead delivering
       product value across multiple apps and domains from an OCR C# app to ingest data, a data pipeline
       into an ElasticSearch cluster with F#, a high performance notification service, and the
       notification settings area of the app for employees and managers.
     `,
     valueAdds: [
-      "Pioneered and documented the initial standards of Helm Charts and k8s yaml for the k8s transition.",
-      "Delivered a full typescript+react - C# backend within a PHP monolith delivering orders of magnitude performance (sub 50ms 99th response times).",
-      "Delivered a bitbucket bot to automate shift left testing methodologies and processes leveraging k8s and ephemeral test environments.",
-      "Piloted first containerization project with our C# Notifications API",
+      "Delivered a full typescript+react app with a C# backend within a PHP monolith, delivering orders of magnitude performance (sub 50ms 99th response times).",
       "Added notification aggregation in a RMQ C# microservice, scaling to handle burst traffic (>30K msgs <1min) while adding aggregation feature.",
-      "Showed value and deliver of each project through Splunk Dashboards."
+      "Delivered a bitbucket bot to automate shift left testing methodologies and processes leveraging k8s and ephemeral test environments.",
+      "Pioneered and documented the initial standards of Helm Charts and k8s yaml for the k8s transition.",
+      "Piloted first containerization project with our C# Notifications API.",
+      "Authored all the Splunk dashboards for monitoring and value realization of ongoing projects."
     ]
   },
   {
@@ -59,14 +63,15 @@ const jobs: Array<JobData> = [
     location: "🇺🇸 Dallas, TX USA",
     start: "January 2017",
     end: "May 2018",
-    description: `
+    shortDescription: "US National leader in full service band management software form instrument inventory to student festival management.",
+    fullDescription: `
       Full Stack (JSCript / VBScript / NodeJS / Typescript / Javascript / PHP) Engineer.
       Worked on features of the main music organization software, CHARMS, used nationally
       across nearly all academic music programs. (Fun fact, I was in their databse from
       ensembles I performed during my school years as a Trumpet Player.)
     `,
     valueAdds: [
-      "Introduced a new full stack during an acquisition, consolidating all bespoke solo and ensemble projects, into a Typescript project.",
+      "Introduced a new full stack during an acquisition, consolidating all bespoke solo and ensemble projects into a new SaaS platform.",
       "Swapped sms/mms/phone provider to cut related costs by 50%."
     ]
   }
@@ -169,6 +174,15 @@ section#objectiveCard:hover {
 				<ol>
 			  	{jobs.map(jobData => <Job {...jobData} />)}
 				</ol>
+			</section>
+
+			<section class="mt-6">
+			  <h2 class="text-3xl mb-2">Where to find me Online</h2>
+
+				<h2 class="text-black text-lg">Links & Online Presence</h2>
+				<ul role="list" class="grid gap-2 grid-cols-[repeat(auto-fit,minmax(24ch,1fr))]">
+					{links.map(link => <Card {...link} />)}
+				</ul>
 			</section>
 
 			<section class="mt-6">
@@ -333,16 +347,6 @@ section#objectiveCard:hover {
 				  </ol>
 			  </CollapsibleSection>
 			</section>
-
-      <CollapsibleSection
-        sectionClass="mt-6"
-        summary="External Links"
-      >
-				<h2 class="text-black text-lg">Links & Online Presence</h2>
-				<ul role="list" class="grid gap-2 grid-cols-[repeat(auto-fit,minmax(24ch,1fr))]">
-					{links.map(link => <Card {...link} />)}
-				</ul>
-      </CollapsibleSection>
 
 			<CollapsibleSection sectionClass="mt-5" summary="Credits & Attributions">
 			  <p>This resume/cv's code is availabe on Github @ <a class="text-blue-500 hover:text-blue-300" target="_blank" href="https://github.com/snewell92/resume.github.io">snewell92/resume.github.io</a></p>
